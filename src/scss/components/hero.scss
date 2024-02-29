@@ -1,0 +1,66 @@
+.hero {
+	padding-top: rem(93);
+	padding-bottom: rem(190);
+	position: relative;
+	// .hero__container
+	&__container {
+		position: relative;
+	}
+
+	// .hero__heading
+
+	&__heading {
+		font-family: 'Galien';
+		font-size: rem(64);
+		font-weight: 700;
+		letter-spacing: rem(2.56);
+		line-height: 115%;
+		color: $deepBlue;
+		margin-bottom: rem(40);
+	}
+
+	// .hero__text
+
+	&__text {
+		font-size: rem(16);
+		color: $deepBlue;
+		opacity: 0.6;
+		max-width: rem(425);
+		letter-spacing: rem(0.8);
+		line-height: 160%;
+		margin-bottom: rem(78);
+	}
+
+	// .hero__cta
+
+	&__cta {
+		background-color: $skyBlue;
+		line-height: 150%;
+		letter-spacing: rem(0.8);
+		padding-left: rem(48);
+		padding-right: rem(48);
+	}
+
+	// .hero__image
+
+	&__image {
+		position: absolute;
+		top: rem(-92);
+		right: rem(-60);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		background: linear-gradient(
+			0deg,
+			#98c3e8 8.84%,
+			rgba(152, 195, 232, 0) 31.12%
+		);
+		opacity: 0.2;
+	}
+}

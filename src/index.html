@@ -2,10 +2,16 @@
 <html lang="ru">
 	@@include('html/_head.htm',{ "title":"Главная" })
 	<body>
-		<div class="wrapper wrapper__container">
+		<div class="wrapper">
 			@@include('html/components/_header.htm',{})
-			<main class="page"></main>
+			<main class="page">
+				@@include('html/components/_hero.htm',{})
+				@@include('html/components/_services.htm',{})
+				@@include('html/components/_clients.htm',{})
+				@@include('html/components/_feedback.htm',{})
+			</main>
 			@@include('html/components/_footer.htm',{})
+			@@include('html/components/_copyright.htm',{})
 		</div>
 		@@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
 	</body>
