@@ -1,21 +1,17 @@
 {
-	"name": "fls-start",
-	"version": "3.0.0",
-	"description": "Start template with Gulp and Webpack",
-	"author": "FLS",
+	"name": "de-test",
+	"version": "1.0.0",
+	"description": "Template with Gulp and Webpack",
+	"author": "Monsherok",
 	"private": true,
-	"license": "GNU General Public License (GPL)",
+	"license": "",
 	"type": "module",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
 		"build": "gulp build --build",
 		"sprite": "gulp sprite",
 		"fonts": "gulp fonts --rewrite",
-		"deploy": "gulp deployFTP --build",
-		"zip": "gulp deployZIP --build",
-		"devbuild": "gulp build --build --nowebp",
-		"tmp": "gulp -f gulpfile.tmp.js"
+		"zip": "gulp deployZIP --build"
 	},
 	"devDependencies": {
 		"copy-webpack-plugin": "latest",
