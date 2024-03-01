@@ -1,6 +1,6 @@
 .hero {
-	padding-top: rem(93);
-	padding-bottom: rem(190);
+	@include adaptiveValue('padding-top', 93, 40);
+	@include adaptiveValue('padding-bottom', 190, 30);
 	position: relative;
 	// .hero__container
 	&__container {
@@ -12,11 +12,12 @@
 	&__heading {
 		font-family: 'Galien';
 		font-size: rem(64);
+		@include adaptiveValue('font-size', 64, 32);
 		font-weight: 700;
 		letter-spacing: rem(2.56);
 		line-height: 115%;
 		color: $deepBlue;
-		margin-bottom: rem(40);
+		@include adaptiveValue('margin-bottom', 40, 25);
 	}
 
 	// .hero__text
@@ -28,26 +29,46 @@
 		max-width: rem(425);
 		letter-spacing: rem(0.8);
 		line-height: 160%;
-		margin-bottom: rem(78);
+		@include adaptiveValue('margin-bottom', 78, 39);
 	}
 
 	// .hero__cta
 
 	&__cta {
+		@include adaptiveValue('--padding-y', 48, 24);
 		background-color: $skyBlue;
 		line-height: 150%;
 		letter-spacing: rem(0.8);
-		padding-left: rem(48);
-		padding-right: rem(48);
+		padding-left: var(--padding-y);
+		padding-right: var(--padding-y);
 	}
 
 	// .hero__image
 
 	&__image {
+		@include adaptiveValue('--right', 175, 175, $containerWidth, 1310);
+		@include adaptiveValue('--right', 175, 0, 1310, 1001);
+		@include adaptiveValue('--right', 0, 0, 1000);
+		@include adaptiveValue('--top', 92, 1);
+		z-index: -1;
 		position: absolute;
-		top: rem(-92);
-		right: rem(-60);
+		top: calc(var(--top) * -1);
+		right: calc(var(--right) * -1);
+		@media (max-width: em(1210)) {
+			top: -20px;
+			margin-left: rem(450);
+		}
+
+		@media (max-width: em(760)) {
+			position: relative;
+			margin-left: 0;
+		}
+		img {
+			width: 100%;
+		}
 	}
+
+	// .hero::after
 
 	&::after {
 		content: '';

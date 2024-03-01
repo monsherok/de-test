@@ -1,11 +1,10 @@
 .header {
 	&__container {
 		max-width: rem(1200);
-		width: 100%;
-		padding: 0;
+		padding: 0 10px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-top: rem(40);
+		@include adaptiveValue('margin-top', 40, 15);
 	}
 }
