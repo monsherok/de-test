@@ -1,0 +1,104 @@
+.clients {
+	background-color: $skyBlue;
+	color: $secondColor;
+	@include adaptiveValue('padding-top', 96, 30);
+	@include adaptiveValue('padding-bottom', 125, 30);
+
+	border-radius: rem(200) 0 0 0;
+	@media (max-width: em(1200)) {
+		border-radius: rem(100) 0 0 0;
+	}
+	@media (max-width: em(860)) {
+		border-radius: 0;
+	}
+	// .clients__container
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		@include adaptiveValue('column-gap', 97, 20);
+		row-gap: rem(20);
+		@media (max-width: em(980)) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// .clients__title
+
+	&__title {
+		font-weight: 600;
+		line-height: 128%;
+	}
+
+	// .clients__subtitle
+
+	&__subtitle {
+		font-weight: 400;
+		font-size: rem(16);
+		line-height: 162%;
+		letter-spacing: 0.05em;
+		opacity: 0.6;
+	}
+
+	// .clients__grid
+
+	&__grid {
+		display: grid;
+		grid-column: span 2;
+		grid-template-columns: repeat(4, 1fr);
+		margin-top: rem(110);
+		@media (max-width: em(980)) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-column: 1;
+			margin-top: rem(20);
+		}
+		@media (max-width: em(560)) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// .clients__item
+
+	&__item {
+		font-weight: 600;
+		font-size: rem(20);
+		line-height: 230%;
+		letter-spacing: 0.02em;
+		color: #f2f2f2;
+		padding: 41px 42px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media (min-width: em(980)) {
+			&:nth-child(-n + 4) {
+				border-bottom: 1px solid $secondColor;
+			}
+			&:not(:nth-child(4)):not(:nth-child(8)) {
+				border-right: 1px solid $secondColor;
+			}
+		}
+		@media (max-width: em(980)) and (min-width: em(560)) {
+			&:nth-child(-n + 6) {
+				border-bottom: 1px solid $secondColor;
+			}
+			&:not(:nth-child(2)):not(:nth-child(4)):not(:nth-child(6)):not(
+					:nth-child(8)
+				) {
+				border-right: 1px solid $secondColor;
+			}
+		}
+		@media (max-width: em(560)) {
+			&:not(:last-child) {
+				border-bottom: 1px solid $secondColor;
+			}
+		}
+		&:not(&.more) {
+			text-transform: uppercase;
+		}
+		&.more {
+			text-transform: capitalize;
+			background-color: rgba($navyBlue, 0.2);
+			cursor: pointer;
+		}
+	}
+}
