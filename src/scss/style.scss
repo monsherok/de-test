@@ -19,14 +19,14 @@ $deepBlue: #1f3f68;
 
 // НАСТРОЙКИ
 // Минимальная ширина страницы
-$minWidth: 360;
+$minWidth: 330;
 // Ширина полотна (макета)
 $maxWidth: 940;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
 $maxWidthContainer: 940;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
-$containerPadding: 30;
+$containerPadding: 20;
 
 // Тип адаптива:
 // 1 = отзывчивость (у контейнера нет брейкпоинтов),
@@ -119,4 +119,5 @@ body {
 // Подключение стилей отдельных блоков
 @import 'header';
 @import 'components/hero';
+@import 'components/services';
 @import 'footer';

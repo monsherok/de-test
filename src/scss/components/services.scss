@@ -1,0 +1,110 @@
+.services {
+	// .services__container
+	@include adaptiveValue('padding-top', 190, 30);
+	@include adaptiveValue('padding-bottom', 212, 30);
+	&__container {
+		@media (min-width: em(860)) {
+			column-count: 2;
+			column-gap: rem(20);
+		}
+		@media (max-width: em(860)) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			gap: 40px;
+		}
+	}
+
+	&__title {
+		color: $navyBlue;
+		max-width: rem(360);
+		@include adaptiveValue('margin-bottom', 158, 40);
+	}
+
+	// .services__card
+
+	&__card {
+		position: relative;
+		break-inside: avoid;
+		box-shadow: 5px 20px 50px 0 rgba($deepBlue, 0.2);
+		border-radius: rem(10);
+		@include adaptiveValue('padding', 48, 15);
+		padding-top: rem(236) !important;
+		transition: box-shadow 0.3s ease;
+		max-width: rem(380);
+		width: 100%;
+		@include adaptiveValue('margin-left', 80, 0);
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 100, 30);
+		}
+		&:hover {
+			box-shadow: 5px 20px 50px 0 rgba($deepBlue, 0.4);
+		}
+	}
+
+	// .services__cardicon
+
+	&__cardicon {
+		margin-bottom: rem(56);
+		position: absolute;
+		transform: translate(-50%);
+		.business & {
+			top: rem(50);
+			left: calc(50% - rem(30));
+		}
+
+		.technology & {
+			top: rem(-20);
+			left: calc(50% + rem(5));
+		}
+		.digital & {
+			top: rem(50);
+			left: calc(50% - rem(20));
+		}
+	}
+
+	// .services__cardtitle
+
+	&__cardtitle {
+		font-weight: 600;
+		font-size: rem(20);
+		line-height: 150%;
+		letter-spacing: 0.048em;
+		color: $deepBlue;
+		margin-bottom: rem(16);
+	}
+
+	// .services__cardtext
+
+	&__cardtext {
+		font-weight: 400;
+		font-size: rem(16);
+		line-height: 162%;
+		letter-spacing: 0.05em;
+		color: $deepBlue;
+		opacity: 0.6;
+		margin-bottom: rem(32);
+	}
+
+	&__cardcta {
+		display: flex;
+		align-items: center;
+		gap: rem(20);
+		font-weight: 600;
+		font-size: rem(14);
+		line-height: 214%;
+		letter-spacing: 0.05em;
+		color: $skyBlue;
+
+		img {
+			transition: all 0.3s ease;
+		}
+
+		&:hover {
+			img {
+				margin-left: rem(5);
+			}
+		}
+	}
+}
