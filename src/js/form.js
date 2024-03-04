@@ -3,39 +3,36 @@ import { closePopup } from './popup.js'
 import { validateForm, validateOnInput } from './validations.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-	const forms = document.forms
+	const forms = Array.from(document.forms)
 
-	for (const form of forms) {
+	forms.forEach(form => {
 		const submitButton = form.querySelector('button[type="submit"]')
 
 		form.addEventListener('submit', e => handleFormSubmit(e, submitButton))
 
 		form.addEventListener('reset', () => {
-			const errorFields = form.querySelectorAll('.error')
-			errorFields.forEach(field => {
+			form.querySelectorAll('.error').forEach(field => {
 				field.classList.remove('error')
-				submitButton.disabled = false
 			})
-		})
+			submitButton.disabled = false
+		});
 
-		Array.from(form.elements).forEach(element => {
+		[...form.elements].forEach(element => {
 			if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
 				element.addEventListener('input', () => validateOnInput(form, submitButton))
 			}
 		})
-	}
+	})
 })
 
-function handleFormSubmit(e, submitButton) {
+const handleFormSubmit = (e, submitButton) => {
 	e.preventDefault()
 	const form = e.target
 	const errors = validateForm(form)
 	console.log('errors', errors)
+	submitButton.disabled = errors !== 0
 	if (errors === 0) {
 		closePopup()
-		notification('Успех')
-	} else {
-		submitButton.disabled = true
+		notification('SUCCESS')
 	}
 }
-
