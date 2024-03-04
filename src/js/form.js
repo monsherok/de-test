@@ -29,7 +29,6 @@ const handleFormSubmit = (e, submitButton) => {
 	e.preventDefault()
 	const form = e.target
 	const errors = validateForm(form)
-	console.log('errors', errors)
 	submitButton.disabled = errors !== 0
 	if (errors === 0) {
 		closePopup()
