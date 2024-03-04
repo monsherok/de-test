@@ -1,11 +1,47 @@
-<!-- 
-<div id="popup" aria-hidden="true" class="popup">
+<div id="popup" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
 			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
+			<div class="contact-form">
+				<h1 class="contact-form__title">SEND US MESSAGE</h1>
+				<form class="contact-form__body">
+					<div class="contact-form__field">
+						<label for="full-name" class="contact-form__label">Full Name</label>
+						<input
+							type="text"
+							id="full-name"
+							name="full-name"
+							class="contact-form__input"
+							placeholder="Your Name"
+							required
+						/>
+					</div>
+					<div class="contact-form__field">
+						<label for="email" class="contact-form__label">Email</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							class="contact-form__input"
+							placeholder="Your Email"
+							required
+						/>
+					</div>
+					<div class="contact-form__field">
+						<label for="message" class="contact-form__label">Message</label>
+						<textarea
+							id="message"
+							name="message"
+							class="contact-form__input"
+							placeholder="Your Message"
+							required
+						></textarea>
+					</div>
+					<button type="submit" class="button contact-form__submit-btn">
+						SUBMIT
+					</button>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
- -->

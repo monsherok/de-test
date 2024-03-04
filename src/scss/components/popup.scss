@@ -1,0 +1,133 @@
+.popup {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba($mainColor, 0.5);
+	// .popup__wrapper
+
+	&__wrapper {
+		max-width: 540px;
+		width: 100%;
+		background-color: $secondColor;
+		position: relative;
+		z-index: 1;
+
+		box-shadow: 5px 10px 50px 0 rgba(16, 112, 177, 0.2);
+		border-radius: rem(10);
+		@include adaptiveValue('padding', 56, 10);
+	}
+
+	// .popup__content
+
+	&__content {
+	}
+
+	// .popup__close
+
+	&__close {
+		font-size: 0;
+		cursor: pointer;
+		position: absolute;
+		top: rem(30);
+		right: rem(40);
+
+		&:hover {
+			&:before,
+			&:after {
+				background: #5a98d0;
+			}
+		}
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			width: rem(24);
+			height: rem(3);
+			background: $deepBlue;
+			transition: all 0.3s ease;
+		}
+		&:before {
+			transform: rotate(45deg);
+		}
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	// .popup__text
+
+	.contact-form {
+		// .contact-form__title
+
+		&__title {
+			font-weight: 600;
+			font-size: rem(20);
+			text-transform: uppercase;
+			color: $deepBlue;
+			line-height: 150%;
+			letter-spacing: 0.04em;
+			@include adaptiveValue('margin-bottom', 48, 16);
+		}
+
+		// .contact-form__body
+
+		&__body {
+			display: flex;
+			flex-direction: column;
+			@include adaptiveValue('gap', 32, 16);
+		}
+
+		// .contact-form__field
+
+		&__field {
+			display: flex;
+			flex-direction: column;
+		}
+
+		// .contact-form__label
+
+		&__label {
+			font-weight: 400;
+			font-size: rem(16);
+			line-height: 187%;
+			letter-spacing: 0.04em;
+			margin-bottom: rem(8);
+		}
+
+		// .contact-form__input
+
+		&__input {
+			border: 1px solid rgba($borderForm, 0.4);
+			border-radius: 10px;
+			@include adaptiveValue('padding-top', 21, 5);
+			@include adaptiveValue('padding-bottom', 21, 5);
+			@include adaptiveValue('padding-left', 42, 15);
+			@include adaptiveValue('padding-right', 42, 15);
+			&::placeholder {
+				font-weight: 300;
+				font-size: rem(16);
+				line-height: 187%;
+				letter-spacing: 0.04em;
+				opacity: 0.2;
+			}
+		}
+
+		// .contact-form__submit-btn
+
+		&__submit-btn {
+			@include adaptiveValue('margin-top', 32, 16);
+			padding-top: rem(32);
+			padding-bottom: rem(32);
+			background-color: $skyBlue;
+			text-transform: uppercase;
+			line-height: 162%;
+			letter-spacing: 0.04em;
+			font-weight: 600;
+		}
+	}
+}
