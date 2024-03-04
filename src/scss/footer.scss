@@ -38,6 +38,7 @@
 			}
 		}
 		&:last-child {
+			margin-left: rem(77);
 			@media (max-width: em(860)) {
 				margin: 0;
 			}
