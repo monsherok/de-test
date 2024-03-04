@@ -1,13 +1,24 @@
 .popup {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
 	display: flex;
+	position: fixed;
 	align-items: center;
 	justify-content: center;
 	background-color: rgba($mainColor, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+	&.--isVisible {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		opacity: 1;
+		visibility: visible;
+
+		& .popup__wrapper {
+			transform: scale(1);
+		}
+	}
 	// .popup__wrapper
 
 	&__wrapper {
@@ -16,10 +27,11 @@
 		background-color: $secondColor;
 		position: relative;
 		z-index: 1;
-
-		box-shadow: 5px 10px 50px 0 rgba(16, 112, 177, 0.2);
+		transform: scale(0.5);
+		box-shadow: 5px 10px 50px 0 rgba($deepBlue, 0.2);
 		border-radius: rem(10);
 		@include adaptiveValue('padding', 56, 10);
+		transition: transform 0.3s ease;
 	}
 
 	// .popup__content
@@ -39,7 +51,7 @@
 		&:hover {
 			&:before,
 			&:after {
-				background: #5a98d0;
+				background: $skyBlue;
 			}
 		}
 		&:before,
@@ -108,12 +120,16 @@
 			@include adaptiveValue('padding-bottom', 21, 5);
 			@include adaptiveValue('padding-left', 42, 15);
 			@include adaptiveValue('padding-right', 42, 15);
+			outline: none;
 			&::placeholder {
 				font-weight: 300;
 				font-size: rem(16);
 				line-height: 187%;
 				letter-spacing: 0.04em;
 				opacity: 0.2;
+			}
+			&.error {
+				border: 1px solid rgba($error, 0.4);
 			}
 		}
 
@@ -128,6 +144,13 @@
 			line-height: 162%;
 			letter-spacing: 0.04em;
 			font-weight: 600;
+			&:disabled {
+				background-color: rgba($skyBlue, 0.2);
+				&:hover {
+					box-shadow: none;
+					cursor: not-allowed;
+				}
+			}
 		}
 	}
 }

@@ -1,10 +1,10 @@
-<div id="popup" class="popup">
+<div id="popup" data-popup="1" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
 			<button data-close type="button" class="popup__close">Закрыть</button>
 			<div class="contact-form">
-				<h1 class="contact-form__title">SEND US MESSAGE</h1>
-				<form class="contact-form__body">
+				<h2 class="contact-form__title">SEND US MESSAGE</h2>
+				<form data-form="1" class="contact-form__body">
 					<div class="contact-form__field">
 						<label for="full-name" class="contact-form__label">Full Name</label>
 						<input
@@ -13,18 +13,18 @@
 							name="full-name"
 							class="contact-form__input"
 							placeholder="Your Name"
-							required
+							data-required=""
 						/>
 					</div>
 					<div class="contact-form__field">
 						<label for="email" class="contact-form__label">Email</label>
 						<input
-							type="email"
+							type="text"
 							id="email"
 							name="email"
 							class="contact-form__input"
 							placeholder="Your Email"
-							required
+							data-required="email"
 						/>
 					</div>
 					<div class="contact-form__field">
@@ -34,7 +34,7 @@
 							name="message"
 							class="contact-form__input"
 							placeholder="Your Message"
-							required
+							data-required=""
 						></textarea>
 					</div>
 					<button type="submit" class="button contact-form__submit-btn">
