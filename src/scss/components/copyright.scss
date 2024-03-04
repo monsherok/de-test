@@ -1,0 +1,20 @@
+.copyright {
+	// .copyright__container
+	@include adaptiveValue('padding-bottom', 64, 15);
+	&.dark-blue::before {
+		border-radius: 0;
+	}
+	&__container {
+		position: relative;
+	}
+
+	// .copyright__text
+
+	&__text {
+		font-weight: 400;
+		font-size: rem(16);
+		line-height: 162%;
+		letter-spacing: 0.05em;
+		opacity: 0.4;
+	}
+}

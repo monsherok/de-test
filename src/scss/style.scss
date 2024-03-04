@@ -11,11 +11,7 @@ $fontFamily: 'Gilroy';
 $fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
-$mainColor: #000;
-$secondColor: #fff;
-$skyBlue: #5a98d0;
-$navyBlue: #316099;
-$deepBlue: #1f3f68;
+@import 'vars';
 
 // НАСТРОЙКИ
 // Минимальная ширина страницы
@@ -121,4 +117,6 @@ body {
 @import 'components/hero';
 @import 'components/services';
 @import 'components/clients';
+@import 'components/feedback';
 @import 'footer';
+@import 'components/copyright';

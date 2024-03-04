@@ -20,6 +20,9 @@
 		color: $navyBlue;
 		max-width: rem(360);
 		@include adaptiveValue('margin-bottom', 158, 40);
+		@media (max-width: em(860)) {
+			text-align: center;
+		}
 	}
 
 	// .services__card
@@ -33,10 +36,19 @@
 		padding-top: rem(236) !important;
 		transition: box-shadow 0.3s ease;
 		max-width: rem(380);
+		@media (max-width: em(860)) {
+			max-width: 100%;
+		}
 		width: 100%;
 		@include adaptiveValue('margin-left', 80, 0);
+		@media (max-width: em(860)) {
+			margin-left: 0;
+		}
 		&:not(:last-child) {
 			@include adaptiveValue('margin-bottom', 100, 30);
+			@media (max-width: em(860)) {
+				margin-bottom: rem(30);
+			}
 		}
 		&:hover {
 			box-shadow: 5px 20px 50px 0 rgba($deepBlue, 0.4);

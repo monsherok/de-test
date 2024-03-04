@@ -7,7 +7,7 @@
 	padding: 15px;
 	transition: box-shadow 0.3s ease;
 	&:hover {
-		box-shadow: 0px 0px 38px -9px rgba($navyBlue, 0.75);
+		box-shadow: 0px 0px 38px -9px rgba($mainColor, 0.2);
 	}
 }
 
@@ -16,4 +16,26 @@ h3 {
 	@include adaptiveValue('font-size', 36, 24);
 	line-height: 128%;
 	letter-spacing: 0.05em;
+}
+
+.dark-blue {
+	background-color: $skyBlue;
+	color: $secondColor;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $navyBlue;
+		border-radius: 0px rem(200) 0px 0px;
+		transform: translateX(-5%);
+
+		@media (max-width: em(1200)) {
+			border-radius: 0px rem(100) 0px 0px;
+			transform: translateX(-5px);
+		}
+	}
 }

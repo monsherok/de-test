@@ -98,7 +98,11 @@
 		&.more {
 			text-transform: capitalize;
 			background-color: rgba($navyBlue, 0.2);
+			transition: background-color 0.3s ease;
 			cursor: pointer;
+			&:hover {
+				background-color: rgba($navyBlue, 0.3);
+			}
 		}
 	}
 }
